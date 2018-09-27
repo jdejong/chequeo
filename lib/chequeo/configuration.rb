@@ -31,7 +31,7 @@ module Chequeo
       @notifications << notification
     end
 
-    def set_dead_mans_switch(&block)
+    def dead_mans_switch(&block)
       @dead_man_switch = block
     end
 
