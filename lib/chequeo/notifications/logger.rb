@@ -17,7 +17,7 @@ module Chequeo
 
       def send_on_completion(job)
         _text = job.get_text
-        send_logger(_text)
+        send_logger_notice(_text)
       end
 
       def send_warnings(job)
@@ -30,7 +30,7 @@ module Chequeo
 
       def send_logger_warning(text)
         begin
-          @configuration[:logger]
+          @configuration[:logger].warn(text)
         rescue => e
           Chequeo.config.logger.error "Chequeo::Notifications::Logger.send_notifications - #{e.message}"
           Chequeo.config.logger.error "Chequeo::Notifications::Logger.send_notifications - #{e.backtrace.inspect}"
@@ -39,7 +39,7 @@ module Chequeo
 
       def send_logger_error(text)
         begin
-          @configuration[:logger]
+          @configuration[:logger].error(text)
         rescue => e
           Chequeo.config.logger.error "Chequeo::Notifications::Logger.send_notifications - #{e.message}"
           Chequeo.config.logger.error "Chequeo::Notifications::Logger.send_notifications - #{e.backtrace.inspect}"
@@ -48,7 +48,7 @@ module Chequeo
 
       def send_logger_notice(text)
         begin
-          @configuration[:logger]
+          @configuration[:logger].info(text)
         rescue => e
           Chequeo.config.logger.error "Chequeo::Notifications::Logger.send_notifications - #{e.message}"
           Chequeo.config.logger.error "Chequeo::Notifications::Logger.send_notifications - #{e.backtrace.inspect}"

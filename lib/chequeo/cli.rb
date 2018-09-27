@@ -35,8 +35,6 @@ module Chequeo
             Rails.logger.warn "Thread TID-#{(thread.object_id ^ ::Process.pid).to_s(36)}"
             if thread.backtrace
               Rails.logger.warn thread.backtrace.join("\n")
-            else
-              Rails.logger.warn "<no backtrace available>"
             end
           end
         },
@@ -94,9 +92,7 @@ module Chequeo
         end
       rescue Interrupt
         Rails.logger.info 'Shutting down'
-        #launcher.stop
 
-        Rails.logger.info "Bye!"
         exit(0)
       end
 
@@ -116,8 +112,7 @@ module Chequeo
 
     def setup_options(args)
       opts = parse_options(args)
-
-
+      
       options.merge!(opts)
     end
 
@@ -133,24 +128,8 @@ module Chequeo
           opts[:daemon] = arg
         end
 
-        args.on '-e', '--environment ENV', "Application environment" do |arg|
-          opts[:environment] = arg
-        end
-
         args.on "-v", "--verbose", "Print more verbose output" do |arg|
           opts[:verbose] = arg
-        end
-
-        args.on '-C', '--config PATH', "path to YAML config file" do |arg|
-          opts[:config_file] = arg
-        end
-
-        args.on '-L', '--logfile PATH', "path to writable logfile" do |arg|
-          opts[:logfile] = arg
-        end
-
-        args.on '-P', '--pidfile PATH', "path to pidfile" do |arg|
-          opts[:pidfile] = arg
         end
 
         args.on '-V', '--version', "Print version and exit" do |arg|
@@ -163,7 +142,6 @@ module Chequeo
 
       opts
     end
-
 
     def require_system
       ENV['RACK_ENV'] = ENV['RAILS_ENV']
