@@ -112,7 +112,7 @@ module Chequeo
 
     def setup_options(args)
       opts = parse_options(args)
-      
+
       options.merge!(opts)
     end
 

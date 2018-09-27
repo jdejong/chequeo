@@ -1,0 +1,27 @@
+
+[Unit]
+Description=Chequeo Service
+Documentation=https://github.com/jdejong/chequeo
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=ubuntu
+
+RestartSec=1
+Restart=on-failure
+
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=chequeo
+
+WorkingDirectory=/<YOUR_PROJECT_CODE_PATH>/current
+ExecStart=/home/ubuntu/.rvm/gems/ruby-2.4.3/wrappers/bundle exec chequeo
+
+
+[Install]
+WantedBy=multi-user.target
