@@ -35,6 +35,9 @@ In order to run the checkups we need a processor. Currently we have a standalone
 
 #### Standalone
 
+You can start the daemon by running `chequeo`. This works well locally but we suggest running it using SystemD or another method to run and fork the process in the background and ensure it is running.
+
+We have an example SystemD script in `examples`.
 
 ### Jobs
 *Generator coming soon!*

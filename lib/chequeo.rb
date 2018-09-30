@@ -20,6 +20,7 @@ module Chequeo
 end
 
 require 'chequeo/configuration'
+require 'chequeo/version'
 
 require 'chequeo/processor'
 require 'chequeo/scheduler'
