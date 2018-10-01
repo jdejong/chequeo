@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# Quiet some warnings we see when running in warning mode:
-# RUBYOPT=-w bundle exec sidekiq
 $TESTING = false
 
 require_relative '../lib/chequeo/cli'

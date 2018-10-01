@@ -20,7 +20,7 @@ StandardError=syslog
 SyslogIdentifier=chequeo
 
 WorkingDirectory=/<YOUR_PROJECT_CODE_PATH>/current
-Environment=RAILS_ENV=production
+EnvironmentFile=/etc/chequeo.environment.conf
 ExecStart=/home/ubuntu/.rvm/gems/ruby-2.4.3/wrappers/bundle exec chequeo
 
 

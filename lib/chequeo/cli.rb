@@ -60,7 +60,7 @@ module Chequeo
     end
 
     def start
-      Chequeo.config.logger.debug "Starting Daemon"
+      Chequeo.config.logger.debug "Starting Daemon - #{ENV['RAILS_ENV']}"
 
       self_read, self_write = IO.pipe
       sigs = %w(INT TERM TTIN TSTP USR1 USR2)
