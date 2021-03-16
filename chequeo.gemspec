@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.2.0'
 
-  spec.add_runtime_dependency 'twilio-ruby', '>= 5.0', '< 6.0'
+  spec.add_runtime_dependency 'twilio-ruby', '>= 5.0'
   spec.add_runtime_dependency 'slack-ruby-client', '>= 0.9.0'
   spec.add_runtime_dependency 'fugit', '>= 1.1.5'
   spec.add_runtime_dependency 'concurrent-ruby', ">= 1.0"
