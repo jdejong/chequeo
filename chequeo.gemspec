@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'slack-ruby-client', '>= 0.9.0'
   spec.add_runtime_dependency 'fugit', '>= 1.1.5'
   spec.add_runtime_dependency 'concurrent-ruby', ">= 1.0"
-  spec.add_runtime_dependency 'galactic-senate', '~> 0.1'
+  spec.add_runtime_dependency 'galactic-senate', '~> 0.2'
   spec.add_runtime_dependency 'oj', '>= 3.6', '< 4'
   spec.add_runtime_dependency 'redis', '>= 4.0'
 
